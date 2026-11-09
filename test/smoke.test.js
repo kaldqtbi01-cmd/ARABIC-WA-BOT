@@ -19,6 +19,7 @@ test('إعدادات Node والاعتماديات الأساسية صالحة',
   assert.ok(Number(process.versions.node.split('.')[0]) >= 20);
   assert.equal(typeof require('@whiskeysockets/baileys').useMultiFileAuthState, 'function');
   assert.equal(typeof require('@whiskeysockets/baileys').normalizeMessageContent, 'function');
+  assert.deepEqual(require('@whiskeysockets/baileys').Browsers.ubuntu('Chrome').slice(0, 2), ['Ubuntu', 'Chrome']);
   assert.equal(typeof require('qrcode-terminal').generate, 'function');
   assert.equal(typeof require('pino'), 'function');
 });

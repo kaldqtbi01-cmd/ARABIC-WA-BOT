@@ -34,7 +34,9 @@ async function startConnection() {
   const socket = makeWASocket({
     auth: state,
     logger: getLogger(),
-    browser: Browsers.ubuntu(settings.BOT_NAME),
+    // Pairing code validation may reject custom browser labels; keep the
+    // companion platform display canonical ("Chrome (Ubuntu)").
+    browser: Browsers.ubuntu('Chrome'),
     markOnlineOnConnect: false,
     syncFullHistory: false
   });
